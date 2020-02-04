@@ -1,28 +1,50 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <section>
+      <v-toolbar style="background-color: #002e5d;" dark>
+        <img src="./assets/byu.svg" style="height: 44px; width: 44px; margin-right: 10px;">
+        <v-toolbar-title style="font-size: 32px;"> Study Rooms </v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-toolbar-items style="margin-left: 20px;">
+          <v-btn text @click="setPage('Home')">Home</v-btn>
+          <v-btn text @click="setPage('Schedule')">Schedule Room</v-btn>
+          <v-btn text @click="setPage('My')">My Rooms</v-btn>
+        </v-toolbar-items>
+      </v-toolbar>
+
+      <v-content>
+        <home v-if="page === 'Home'"></home>
+        <schedule-room v-else-if="page === 'Schedule'"></schedule-room>
+        <my-rooms v-else></my-rooms>
+      </v-content>
+    </section>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Home from './components/Home'
+import MyRooms from './components/MyRooms'
+import ScheduleRoom from "./components/ScheduleRoom";
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
-    HelloWorld
+    MyRooms,
+    ScheduleRoom,
+    Home
+  },
+  data: () => ({
+    //
+  }),
+  methods: {
+    setPage(str) {
+      this.$store.commit('setPage', str)
+    }
+  },
+  computed: {
+    page() {
+      return this.$store.state.page
+    }
   }
-}
+};
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
