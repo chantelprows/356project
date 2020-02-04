@@ -1,12 +1,18 @@
 <template>
-    <section>
+    <div :style="{ backgroundImage: url('${image}') }">
         HOME
-    </section>
+        {{image}}
+    </div>
 </template>
 
 <script>
     export default {
-        name: "home"
+        name: "home",
+        data: function() {
+            return {
+                image: './assets/campus.jpg'
+            }
+        }
     }
 </script>
 
