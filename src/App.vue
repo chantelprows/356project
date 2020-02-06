@@ -6,9 +6,9 @@
         <v-toolbar-title style="font-size: 32px;"> Study Rooms </v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items style="margin-left: 20px;">
-          <v-btn text @click="setPage('Home')">Home</v-btn>
-          <v-btn text @click="setPage('Schedule')">Schedule Room</v-btn>
-          <v-btn text @click="setPage('My')">My Rooms</v-btn>
+          <v-btn text @click="setPage('Home')" :style="tabSelected('Home')">Home</v-btn>
+          <v-btn text @click="setPage('Schedule')" :style="tabSelected('Schedule')">Schedule Room</v-btn>
+          <v-btn text @click="setPage('My')" :style="tabSelected('My')">My Rooms</v-btn>
         </v-toolbar-items>
       </v-toolbar>
 
@@ -39,6 +39,11 @@ export default {
   methods: {
     setPage(str) {
       this.$store.commit('setPage', str)
+    },
+    tabSelected(str) {
+      if (str === this.page) {
+          return 'background-color: #628CB6'
+      }
     }
   },
   computed: {
