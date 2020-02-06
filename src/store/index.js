@@ -5,12 +5,16 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
     state: {
-      page: "Home"
+        page: "Home",
+        rooms: [{location: 'location', day: 'day', time: 'time'}]
     },
 
     mutations: {
         setPage: (state, str) => {
             state.page = str
+        },
+        addRoom: (state, obj) => {
+            state.rooms.push(obj)
         }
     },
 

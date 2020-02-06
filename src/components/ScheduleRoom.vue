@@ -84,11 +84,13 @@
         },
         methods: {
             schedule() {
+                let obj = {'location': this.building + " " + this.room, 'day': this.day, 'time': this.time}
+                this.$store.commit('addRoom', obj)
                 this.building = ""
                 this.room = ""
                 this.day = ""
                 this.time = ""
-                alert('Room scheduled!')
+                this.$store.commit('setPage', 'My')
             }
         }
     }
