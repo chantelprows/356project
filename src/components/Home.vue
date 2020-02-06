@@ -1,10 +1,12 @@
 <template>
-    <div
-            class=" bg-no-repeat bg-cover  bg-white hero relative"
-            :style="{ backgroundImage: `url(${backgroundUrl})` }"
-    >
-        <div style="width: 1000px; height: 550px;">
-            Home
+    <div :style="{backgroundImage: `url(${backgroundUrl})`}" style="margin-left: 32px;">
+        <div style="height: 550px;">
+            <div style="background-color: white; opacity: 0.7; position: absolute;
+                margin-left: 7.5%; margin-top: 5%; height: 80%; width: 80%;">
+                <div style="color: white;">
+                    HOME
+                </div>
+            </div>
         </div>
     </div>
 </template>

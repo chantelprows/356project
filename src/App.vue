@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app style="margin: 0; padding: 0;">
     <section>
       <v-toolbar style="background-color: #002e5d;" dark>
         <img src="./assets/byu.svg" style="height: 44px; width: 44px; margin-right: 10px;">
