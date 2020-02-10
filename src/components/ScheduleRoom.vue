@@ -7,7 +7,7 @@
             <div style="font-size: 32px; color: #628CB6; font-weight: bold;">
                 Where?
             </div>
-            <div style="margin: auto;">
+            <div style="margin-left: 30px;">
                 <v-select
                         v-model="building"
                         :items="buildings"
@@ -31,11 +31,11 @@
             <div style="font-size: 32px; color: #628CB6; font-weight: bold;">
                 When?
             </div>
-            <div style="margin-left: 10px;">
+            <div style="margin-left: 40px;">
                 <v-select
                         v-model="day"
                         :items="days"
-                        label="Pick Day"
+                        label="Pick a Day"
                         solo
                         style="width: 480px; margin-left: 80px; margin-right: 416px;"
                 >
