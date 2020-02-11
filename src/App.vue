@@ -9,13 +9,15 @@
           <v-btn text @click="setPage('Home')" :style="tabSelected('Home')">Home</v-btn>
           <v-btn text @click="setPage('Schedule')" :style="tabSelected('Schedule')">Schedule Room</v-btn>
           <v-btn text @click="setPage('My')" :style="tabSelected('My')">My Rooms</v-btn>
+<!--          <v-btn text @click="setPage('Login')" :style="tabSelected('Login')">My Rooms</v-btn>-->
         </v-toolbar-items>
       </v-toolbar>
 
       <v-content>
         <home v-if="page === 'Home'"></home>
         <schedule-room v-else-if="page === 'Schedule'"></schedule-room>
-        <my-rooms v-else></my-rooms>
+        <my-rooms v-else-if="page === 'My'"></my-rooms>
+        <login v-else></login>
       </v-content>
     </section>
   </v-app>
@@ -25,13 +27,15 @@
 import Home from './components/Home'
 import MyRooms from './components/MyRooms'
 import ScheduleRoom from "./components/ScheduleRoom";
+import Login from "./components/Login";
 
 export default {
   name: 'App',
   components: {
     MyRooms,
     ScheduleRoom,
-    Home
+    Home,
+    Login
   },
   data: () => ({
     //
@@ -42,6 +46,9 @@ export default {
     },
     tabSelected(str) {
       if (str === this.page) {
+          return 'background-color: #628CB6'
+      }
+      if (str === 'Home' && this.page === 'Login') {
           return 'background-color: #628CB6'
       }
     }

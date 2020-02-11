@@ -3,31 +3,11 @@
         <div style="text-align: center; padding-top: 30px; font-size: 50px; color: #628CB6; font-weight: bold;">
             Schedule A Room
         </div>
-        <div style="margin-top: 32px; display: flex; margin-left: 220px;">
-            <div style="font-size: 32px; color: #628CB6; font-weight: bold;">
-                Where?
-            </div>
-            <div style="margin-left: 30px;">
-                <v-select
-                        v-model="building"
-                        :items="buildings"
-                        label="Pick Building"
-                        solo
-                        style="width: 480px; margin-left: 80px; margin-right: 416px;"
-                >
-                </v-select>
-                <v-select
-                        v-model="room"
-                        :items="rooms"
-                        label="Pick Room"
-                        solo
-                        style="width: 480px; margin-left: 80px; margin-right: 416px;"
-                        v-show="building !== ''"
-                >
-                </v-select>
-            </div>
+        <div style="text-align: center; color: #628CB6;">
+            Rooms can be reserved in hour long chunks
         </div>
-        <div style="margin-top: 16px; display: flex; margin-left: 220px;" v-show="room !== ''">
+        <br>
+        <div style="margin-top: 16px; display: flex; margin-left: 220px;">
             <div style="font-size: 32px; color: #628CB6; font-weight: bold;">
                 When?
             </div>
@@ -47,6 +27,30 @@
                         solo
                         style="width: 480px; margin-left: 80px; margin-right: 416px;"
                         v-show="day !== ''"
+                >
+                </v-select>
+            </div>
+        </div>
+        <div style="margin-top: 32px; display: flex; margin-left: 220px;" v-show="time !== ''">
+            <div style="font-size: 32px; color: #628CB6; font-weight: bold;">
+                Where?
+            </div>
+            <div style="margin-left: 30px;">
+                <v-select
+                        v-model="building"
+                        :items="buildings"
+                        label="Pick Building"
+                        solo
+                        style="width: 480px; margin-left: 80px; margin-right: 416px;"
+                >
+                </v-select>
+                <v-select
+                        v-model="room"
+                        :items="rooms"
+                        label="Pick Room"
+                        solo
+                        style="width: 480px; margin-left: 80px; margin-right: 416px;"
+                        v-show="building !== ''"
                 >
                 </v-select>
             </div>
@@ -77,9 +81,9 @@
                 room: "",
                 rooms: ['100', '200', '300', '400'],
                 day: "",
-                days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                days: ['February 11', 'February 12', 'February 13', 'February 14', 'February 15'],
                 time: "",
-                times: ['1:00pm', '1:30pm', '2:00pm', '2:30pm']
+                times: ['9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm']
             }
         },
         methods: {

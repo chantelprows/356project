@@ -6,7 +6,7 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
     state: {
         page: "Home",
-        rooms: [{location: 'location', day: 'day', time: 'time'}]
+        rooms: []
     },
 
     mutations: {
