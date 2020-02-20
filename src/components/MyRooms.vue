@@ -23,6 +23,7 @@
                 <template v-slot:item.action="{ item }">
                     <v-icon
                             @click="deleter(item)"
+                            title="Cancel Room Reservation"
                     >
                         delete
                     </v-icon>
@@ -41,7 +42,7 @@
                     { text: 'Date', align: 'center', sortable: false, value: 'day' },
                     { text: 'Time', align: 'center', sortable: false, value: 'time' },
                     { text: 'Location', align: 'center', sortable: false, value: 'location' },
-                    { text: 'Action', align: 'center', sortable: false, value: 'action'}
+                    { text: 'Cancel', align: 'center', sortable: false, value: 'action'}
                 ],
             }
         },
