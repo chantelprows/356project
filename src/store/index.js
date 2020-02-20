@@ -15,6 +15,13 @@ export const store = new Vuex.Store({
         },
         addRoom: (state, obj) => {
             state.rooms.push(obj)
+        },
+        deleteRoom: (state, obj) => {
+            for (let i = 0; i < state.rooms.length; i++) {
+                if (state.rooms[i].location === obj.location && state.rooms[i].time === obj.time) {
+                    state.rooms.splice(i, 1)
+                }
+            }
         }
     },
 

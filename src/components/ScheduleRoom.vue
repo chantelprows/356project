@@ -4,7 +4,7 @@
             Schedule A Room
         </div>
         <div style="text-align: center; color: #628CB6;">
-            Rooms can be reserved in hour long chunks
+            Rooms can be reserved in hour long blocks
         </div>
         <br>
         <div style="margin-top: 16px; display: flex; margin-left: 220px;">
@@ -77,13 +77,13 @@
         data: function () {
             return {
                 building: "",
-                buildings: ['ASB', 'HBLL', 'LSB', 'TMCB'],
+                buildings: ['ASB', 'BNSN', 'CB', 'EB', 'ESC', 'HBLL', 'HFAC', 'JFSB', 'JKB', 'JSB', 'KMBL', 'LSB', 'MARB', 'MSRB', 'RB', 'TMCB', 'TNRB', 'WSC'],
                 room: "",
-                rooms: ['100', '200', '300', '400'],
+                rooms: ['1214', '2170J', '2170K', '2714', '4360', '4361', '4520', '4521'],
                 day: "",
-                days: ['February 11', 'February 12', 'February 13', 'February 14', 'February 15'],
+                days: ['February 15', 'February 17', 'February 18', 'February 19', 'February 20'],
                 time: "",
-                times: ['9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm']
+                times: ['8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', '8:00pm']
             }
         },
         methods: {
